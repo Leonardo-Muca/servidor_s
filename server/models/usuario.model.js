@@ -3,24 +3,28 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let usuarioSchema = new Schema({
-    nombre:{
-        type:String,
-        required: [true,'El nombre es necesario']
+    nombre: {
+        type: String,
+        required: [true, 'El nombre es necesario']
     },
-    email:{
-        type:String,
-        required: [true,'El correo es necesario'],
+    email: {
+        type: String,
+        required: [true, 'El correo es necesario'],
         unique: true
     },
-    password:{
-        type:String,
-        required: [true,'La contraseña es necesaria']
+    password: {
+        type: String,
+        required: [true, 'La contraseña es necesaria']
     },
-    tipo:{
-        type:String,
+    tipo: {
+        type: String,
         default: 'USER_ROLE'
     },
-    estado:{
+    sueldo: {
+        type: Number,
+        required: [true, 'El sueldo es necesario'],
+    },
+    estado: {
         type: Boolean,
         default: true
     },
@@ -30,4 +34,4 @@ let usuarioSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model('Usuario',usuarioSchema);
+module.exports = mongoose.model('Usuario', usuarioSchema);

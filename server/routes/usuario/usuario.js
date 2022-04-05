@@ -63,6 +63,7 @@ app.post('/usuario', function (req, res) {//req = obtener datos mandados por el 
     nombre: body.nombre,
     email: body.email,
     tipo: body.tipo,
+    sueldo: body.sueldo,
     password: bcrypt.hashSync(body.password, 10)
   });
 
